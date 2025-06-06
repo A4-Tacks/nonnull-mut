@@ -1,22 +1,10 @@
+#![doc = include_str!("../README.md")]
 #![no_std]
 #![forbid(unsafe_op_in_unsafe_fn)]
 
 use core::{cmp::Ordering, fmt, hash, marker::PhantomData, num::NonZeroUsize, ptr::NonNull};
 
-/// Like [`NonNull<T>`], but `T` is invariant like `*mut T`
-///
-/// # Examples
-///
-/// ```
-/// # use std::mem::{size_of, align_of};
-/// use nonnull_mut::NonNullMut;
-///
-/// assert_eq!(size_of::<NonNullMut<i16>>(), size_of::<Option<NonNullMut<i16>>>());
-/// assert_eq!(align_of::<NonNullMut<i16>>(), align_of::<Option<NonNullMut<i16>>>());
-///
-/// assert_eq!(size_of::<NonNullMut<str>>(), size_of::<Option<NonNullMut<str>>>());
-/// assert_eq!(align_of::<NonNullMut<str>>(), align_of::<Option<NonNullMut<str>>>());
-/// ```
+#[doc = include_str!("../README.md")]
 #[repr(transparent)]
 pub struct NonNullMut<T: ?Sized> {
     inner: NonNull<T>,
