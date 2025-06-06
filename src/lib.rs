@@ -78,7 +78,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::new_unchecked`]
     ///
     /// # Safety
-    /// - Like [`NonNull::new_unchecked`]
+    ///
+    /// See [`NonNull::new_unchecked`] for safety concerns and examples.
     #[inline]
     pub const unsafe fn new_unchecked(ptr: *mut T) -> Self {
         let inner = unsafe { NonNull::new_unchecked(ptr) };
@@ -132,7 +133,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::as_ref`]
     ///
     /// # Safety
-    /// - Like [`NonNull::as_ref`]
+    ///
+    /// See [`NonNull::as_ref`] for safety concerns and examples.
     #[inline(always)]
     #[must_use]
     pub const unsafe fn as_ref<'a>(&self) -> &'a T {
@@ -142,7 +144,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::as_mut`]
     ///
     /// # Safety
-    /// - Like [`NonNull::as_mut`]
+    ///
+    /// See [`NonNull::as_mut`] for safety concerns and examples.
     #[inline(always)]
     #[must_use]
     pub const unsafe fn as_mut<'a>(&mut self) -> &'a mut T {
@@ -160,7 +163,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::offset`]
     ///
     /// # Safety
-    /// - Like [`NonNull::offset`]
+    ///
+    /// See [`NonNull::offset`] for safety concerns and examples.
     #[inline(always)]
     #[must_use = "returns a new pointer rather than modifying its argument"]
     pub const unsafe fn offset(self, count: isize) -> Self
@@ -173,7 +177,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::byte_offset`]
     ///
     /// # Safety
-    /// - Like [`NonNull::byte_offset`]
+    ///
+    /// See [`NonNull::byte_offset`] for safety concerns and examples.
     #[inline(always)]
     #[must_use]
     pub const unsafe fn byte_offset(self, count: isize) -> Self {
@@ -183,7 +188,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::add`]
     ///
     /// # Safety
-    /// - Like [`NonNull::add`]
+    ///
+    /// See [`NonNull::add`] for safety concerns and examples.
     #[inline(always)]
     #[must_use = "returns a new pointer rather than modifying its argument"]
     pub const unsafe fn add(self, count: usize) -> Self
@@ -196,7 +202,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::byte_add`]
     ///
     /// # Safety
-    /// - Like [`NonNull::byte_add`]
+    ///
+    /// See [`NonNull::byte_add`] for safety concerns and examples.
     #[inline(always)]
     #[must_use]
     pub const unsafe fn byte_add(self, count: usize) -> Self {
@@ -206,7 +213,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::sub`]
     ///
     /// # Safety
-    /// - Like [`NonNull::sub`]
+    ///
+    /// See [`NonNull::sub`] for safety concerns and examples.
     #[inline(always)]
     #[must_use = "returns a new pointer rather than modifying its argument"]
     pub const unsafe fn sub(self, count: usize) -> Self
@@ -219,7 +227,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::byte_sub`]
     ///
     /// # Safety
-    /// - Like [`NonNull::byte_sub`]
+    ///
+    /// See [`NonNull::byte_sub`] for safety concerns and examples.
     #[inline(always)]
     #[must_use]
     pub const unsafe fn byte_sub(self, count: usize) -> Self {
@@ -229,7 +238,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::offset_from`]
     ///
     /// # Safety
-    /// - Like [`NonNull::offset_from`]
+    ///
+    /// See [`NonNull::offset_from`] for safety concerns and examples.
     #[inline]
     pub const unsafe fn offset_from(self, origin: NonNull<T>) -> isize
     where
@@ -241,7 +251,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::byte_offset_from`]
     ///
     /// # Safety
-    /// - Like [`NonNull::byte_offset_from`]
+    ///
+    /// See [`NonNull::byte_offset_from`] for safety concerns and examples.
     #[inline(always)]
     pub const unsafe fn byte_offset_from<U: ?Sized>(self, origin: NonNull<U>) -> isize {
         unsafe { self.inner.byte_offset_from(origin) }
@@ -250,7 +261,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::read`]
     ///
     /// # Safety
-    /// - Like [`NonNull::read`]
+    ///
+    /// See [`NonNull::read`] for safety concerns and examples.
     #[inline]
     pub const unsafe fn read(self) -> T
     where
@@ -262,7 +274,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::read_volatile`]
     ///
     /// # Safety
-    /// - Like [`NonNull::read_volatile`]
+    ///
+    /// See [`NonNull::read_volatile`] for safety concerns and examples.
     #[inline]
     pub unsafe fn read_volatile(self) -> T
     where
@@ -274,7 +287,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::read_unaligned`]
     ///
     /// # Safety
-    /// - Like [`NonNull::read_unaligned`]
+    ///
+    /// See [`NonNull::read_unaligned`] for safety concerns and examples.
     #[inline]
     pub const unsafe fn read_unaligned(self) -> T
     where
@@ -286,7 +300,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::copy_to`]
     ///
     /// # Safety
-    /// - Like [`NonNull::copy_to`]
+    ///
+    /// See [`NonNull::copy_to`] for safety concerns and examples.
     #[inline(always)]
     pub const unsafe fn copy_to(self, dest: NonNull<T>, count: usize)
     where
@@ -298,7 +313,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::copy_to_nonoverlapping`]
     ///
     /// # Safety
-    /// - Like [`NonNull::copy_to_nonoverlapping`]
+    ///
+    /// See [`NonNull::copy_to_nonoverlapping`] for safety concerns and examples.
     #[inline(always)]
     pub const unsafe fn copy_to_nonoverlapping(self, dest: NonNull<T>, count: usize)
     where
@@ -310,7 +326,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::copy_from`]
     ///
     /// # Safety
-    /// - Like [`NonNull::copy_from`]
+    ///
+    /// See [`NonNull::copy_from`] for safety concerns and examples.
     #[inline(always)]
     pub const unsafe fn copy_from(self, src: NonNull<T>, count: usize)
     where
@@ -322,7 +339,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::copy_from_nonoverlapping`]
     ///
     /// # Safety
-    /// - Like [`NonNull::copy_from_nonoverlapping`]
+    ///
+    /// See [`NonNull::copy_from_nonoverlapping`] for safety concerns and examples.
     #[inline(always)]
     pub const unsafe fn copy_from_nonoverlapping(self, src: NonNull<T>, count: usize)
     where
@@ -334,7 +352,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::drop_in_place`]
     ///
     /// # Safety
-    /// - Like [`NonNull::drop_in_place`]
+    ///
+    /// See [`NonNull::drop_in_place`] for safety concerns and examples.
     #[inline(always)]
     pub unsafe fn drop_in_place(self) {
         unsafe { self.inner.drop_in_place() }
@@ -343,7 +362,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::write`]
     ///
     /// # Safety
-    /// - Like [`NonNull::write`]
+    ///
+    /// See [`NonNull::write`] for safety concerns and examples.
     #[inline(always)]
     pub const unsafe fn write(self, val: T)
     where
@@ -355,7 +375,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::write_bytes`]
     ///
     /// # Safety
-    /// - Like [`NonNull::write_bytes`]
+    ///
+    /// See [`NonNull::write_bytes`] for safety concerns and examples.
     #[inline(always)]
     pub const unsafe fn write_bytes(self, val: u8, count: usize)
     where
@@ -367,7 +388,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::write_volatile`]
     ///
     /// # Safety
-    /// - Like [`NonNull::write_volatile`]
+    ///
+    /// See [`NonNull::write_volatile`] for safety concerns and examples.
     #[inline(always)]
     pub unsafe fn write_volatile(self, val: T)
     where
@@ -379,7 +401,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::write_unaligned`]
     ///
     /// # Safety
-    /// - Like [`NonNull::write_unaligned`]
+    ///
+    /// See [`NonNull::write_unaligned`] for safety concerns and examples.
     #[inline(always)]
     pub const unsafe fn write_unaligned(self, val: T)
     where
@@ -391,7 +414,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::replace`]
     ///
     /// # Safety
-    /// - Like [`NonNull::replace`]
+    ///
+    /// See [`NonNull::replace`] for safety concerns and examples.
     #[inline(always)]
     pub unsafe fn replace(self, src: T) -> T
     where
@@ -403,7 +427,8 @@ impl<T: ?Sized> NonNullMut<T> {
     /// Like [`NonNull::swap`]
     ///
     /// # Safety
-    /// - Like [`NonNull::swap`]
+    ///
+    /// See [`NonNull::swap`] for safety concerns and examples.
     #[inline(always)]
     pub const unsafe fn swap(self, with: NonNull<T>)
     where
