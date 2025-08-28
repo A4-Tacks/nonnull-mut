@@ -1,6 +1,6 @@
 [package]
 name = "nonnull-mut"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 
 authors = ["A4-Tacks <wdsjxhno1001@163.com>"]
@@ -9,7 +9,7 @@ categories = ["no-std", "no-std::no-alloc", "rust-patterns"]
 description = "NonNull<T>, but T is invariant like *mut T"
 
 license = "MIT"
-repository = "https://github.com/A4-Tacks/nonnull-mut-rs"
+repository = "https://github.com/A4-Tacks/nonnull-mut"
 readme = "README.md"
 
 [dependencies]
